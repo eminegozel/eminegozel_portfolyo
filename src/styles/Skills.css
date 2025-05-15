@@ -1,0 +1,150 @@
+.skills-section {
+    min-height: 100vh;
+    padding: 100px 20px;
+    background-color: #1A1A2E;
+    color: #F8F9FF;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(
+            circle at center,
+            #1A1A2E 0%,
+            #1A1A2E 40%,
+            #0D0D15 100%
+    );
+    
+}
+
+.skills-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    width: 100%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: #8E9FFF;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #8E9FFF, #B4A0FF);
+    border-radius: 2px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.skill-card {
+    background: rgba(142, 159, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(142, 159, 255, 0.1);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-card i {
+    font-size: 3rem;
+    color: #8E9FFF;
+    margin-bottom: 1rem;
+}
+
+.skill-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #F8F9FF;
+}
+
+.skill-bar {
+    background-color: rgba(142, 159, 255, 0.1);
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(to right, #8E9FFF, #B4A0FF);
+    position: relative;
+    width: 0%;
+}
+
+.skill-percentage {
+    position: absolute;
+    right: 0;
+    top: -25px;
+    font-size: 0.9rem;
+    color: #F8F9FF;
+}
+
+/* Animasyon Gecikmesi */
+.skill-card:nth-child(1) { animation-delay: 0.2s; }
+.skill-card:nth-child(2) { animation-delay: 0.4s; }
+.skill-card:nth-child(3) { animation-delay: 0.6s; }
+.skill-card:nth-child(4) { animation-delay: 0.8s; }
+.skill-card:nth-child(5) { animation-delay: 1s; }
+.skill-card:nth-child(6) { animation-delay: 1.2s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tablet için responsive tasarım */
+@media (max-width: 992px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobil için responsive tasarım */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card {
+        padding: 1.5rem;
+    }
+
+    .skill-card i {
+        font-size: 2.5rem;
+    }
+
+    .skill-card h3 {
+        font-size: 1.2rem;
+    }
+} 

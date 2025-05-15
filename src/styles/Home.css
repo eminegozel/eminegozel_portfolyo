@@ -1,0 +1,183 @@
+.home-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(
+        circle at center,
+        #1A1A2E 0%,
+        #1A1A2E 40%,
+        #0D0D15 100%
+    );
+    color: #F8F9FF;
+    text-align: center;
+    padding-top: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.home-content {
+    max-width: 800px;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.gradient-text {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    position: relative;
+    opacity: 0;
+    animation: slideInText 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.gradient-text .highlight-text {
+    display: block;
+    background: linear-gradient(
+        to right,
+        #8E9FFF 0%,
+        #B4A0FF 50%,
+        #8E9FFF 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    animation: shine 3s linear infinite;
+    animation-delay: 1.5s;
+}
+
+/* Giriş Animasyonları */
+@keyframes slideInText {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.home-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.home-content p {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #B4A0FF;
+    opacity: 0;
+    font-weight: 300;
+    letter-spacing: 1px;
+    animation: slideInText 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content .sub-text {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #8E9FFF;
+    opacity: 0;
+    font-weight: 400;
+    letter-spacing: 1px;
+    animation: slideInText 1s ease forwards;
+    animation-delay: 1.2s;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    opacity: 0;
+    animation: slideUp 1s ease forwards;
+    animation-delay: 1.5s;
+}
+
+/* Giriş Animasyonları */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mevcut animasyonlar */
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.social-links a {
+    color: #8E9FFF;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem;
+}
+
+.social-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(142, 159, 255, 0.1);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #B4A0FF;
+    transform: translateY(-3px);
+}
+
+.social-links a:hover::before {
+    transform: scale(1);
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+    .gradient-text {
+        font-size: 2.5rem;
+    }
+
+    .home-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .home-content p {
+        font-size: 1.2rem;
+    }
+
+    .social-links {
+        gap: 1.5rem;
+    }
+
+    .social-links a {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gradient-text {
+        font-size: 2rem;
+    }
+
+    .home-content p {
+        font-size: 1rem;
+    }
+} 
